@@ -1,0 +1,20 @@
+.program keyboard_pio
+
+;pins  0 data
+;      1 clock
+
+
+start:
+wait 0 pin 0
+
+get_data:
+    set x 10
+bitloop:
+    wait 0 pin 1
+    in pins, 1
+    wait 1 pin 1
+    jmp x-- bitloop
+    jmp start
+
+
+
